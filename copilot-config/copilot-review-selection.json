@@ -1,0 +1,30 @@
+{
+  "reviewSelection": {
+    "enable": true,
+    "criteria": {
+      "complexity": "medium",
+      "language": "C++",
+      "focusAreas": [
+        "class design",
+        "error handling",
+        "performance optimization",
+        "TODO comments",
+        "Doxygen comments are required",
+        "Ensure all abstract base classes have a virtual destructor"
+      ]
+    },
+    "preferences": {
+      "suggestions": {
+        "style": "consistent",
+        "namingConvention": "camelCase"
+      },
+      "review": {
+        "focusOn": [
+          "functionality",
+          "readability",
+          "maintainability"
+        ]
+      }
+    }
+  }
+}
