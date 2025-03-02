@@ -25,8 +25,8 @@ set(HEADERS
   src/company.h
 )
 
-# Add the executable
-add_executable(CompanyProject ${SOURCES} ${HEADERS})
+# Create a library
+add_library(CompanyProject STATIC ${SOURCES} ${HEADERS})
 
 # Include directories
 target_include_directories(CompanyProject PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -36,8 +36,12 @@ set(TEST_SOURCES
   tests/main.cpp
   tests/test_company.cpp
 )
+
 # Add the test executable
-add_executable(CompanyProjectTests ${TEST_SOURCES} ${SOURCES} ${HEADERS})
+add_executable(CompanyProjectTests ${TEST_SOURCES})
+
+# Link the library to the test executable
+target_link_libraries(CompanyProjectTests PRIVATE CompanyProject)
 
 # Include directories for tests
 target_include_directories(CompanyProjectTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/tests)

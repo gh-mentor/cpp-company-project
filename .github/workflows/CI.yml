@@ -4,7 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
+      - 'tests/**'
   pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
   workflow_dispatch:
 
 jobs:
@@ -39,7 +45,7 @@ jobs:
         VERBOSE: 1
 
     - name: Run tests
-      run: build\test_task.exe --success
+      run: build\CompanyProjectTests.exe --success
       env:
         VERBOSE: 1
 

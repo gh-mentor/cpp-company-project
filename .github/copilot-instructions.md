@@ -12,20 +12,20 @@
 - Use `const` for variables that do not change.
 - Use `auto` for type inference where appropriate.
 - Prefer lambda functions for anonymous functions.
-- Use string interpolation with `std::format` instead of string concatenation.
-- Ensure all functions handle errors using exceptions.
+- Use `std::stringstream` for string manipulation instead of string concatenation. [Reference](https://en.cppreference.com/w/cpp/header/sstream)
+- Ensure all functions handle errors using exceptions. [Reference](https://en.cppreference.com/w/cpp/error/exception)
 - Verify that all included headers are used.
 - Check for proper error handling in all functions.
 - Ensure all loops have proper termination conditions.
 - Use descriptive names for variables and functions.
 - Avoid deeply nested code; refactor into smaller functions if necessary.
-- Ensure all promises are properly awaited using `std::future`.
+- Ensure all promises are properly awaited using `std::future`. [Reference](https://en.cppreference.com/w/cpp/thread/future)
 - Verify that all dependencies are listed in `CMakeLists.txt`.
 - Check for any potential performance issues.
-- **Ensure all abstract base classes have a virtual destructor.**
+- **Ensure all abstract base classes have a virtual destructor.** [Reference](https://en.cppreference.com/w/cpp/language/destructor)
 
 ## Testing Guidelines
-- Use DocTest for all tests.
+- Use DocTest for all tests. [Reference](https://github.com/onqtam/doctest)
 - Ensure all tests are self-contained and do not rely on external state.
 - Write tests for all public functions and classes.
 - Ensure tests cover both typical and edge cases.
