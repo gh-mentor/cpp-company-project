@@ -35,6 +35,10 @@ target_include_directories(CompanyProject PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/sr
 set(TEST_SOURCES
   tests/main.cpp
   tests/test_company.cpp
+  tests/test_department.cpp
+  tests/test_employee.cpp
+  tests/test_manager.cpp
+  tests/test_developer.cpp
 )
 
 # Add the test executable

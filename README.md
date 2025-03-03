@@ -62,7 +62,7 @@ cpp-company-project
 
 6. **Run the Tests**: 
    ```
-   ./CompanyProjectTests.exe --success
+   .\CompanyProjectTests.exe --success
    ```
 
 7. **Return to the Root Directory**: 

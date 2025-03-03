@@ -6,13 +6,15 @@
 - Use double quotes for strings.
 - Ensure all functions have Doxygen comments.
 - Ensure consistent indentation using 2 spaces.
+- Use 'm_' as a prefix for private and protected member variables.
 - Separate implementation and design by using header (`.h` or `.hpp`) and source (`.cpp`) files.
+- Favor composition over inheritance where possible.
 
 ## Specific Instructions
 - Use `const` for variables that do not change.
 - Use `auto` for type inference where appropriate.
 - Prefer lambda functions for anonymous functions.
-- Use `std::stringstream` for string manipulation instead of string concatenation. [Reference](https://en.cppreference.com/w/cpp/header/sstream)
+- Use `std::stringstream` for string concatenation. [Reference](https://cplusplus.com/reference/sstream/stringstream/)
 - Ensure all functions handle errors using exceptions. [Reference](https://en.cppreference.com/w/cpp/error/exception)
 - Verify that all included headers are used.
 - Check for proper error handling in all functions.
@@ -22,7 +24,7 @@
 - Ensure all promises are properly awaited using `std::future`. [Reference](https://en.cppreference.com/w/cpp/thread/future)
 - Verify that all dependencies are listed in `CMakeLists.txt`.
 - Check for any potential performance issues.
-- **Ensure all abstract base classes have a virtual destructor.** [Reference](https://en.cppreference.com/w/cpp/language/destructor)
+- Ensure all abstract base classes have a pure virtual destructor. [Reference](https://en.cppreference.com/w/cpp/language/destructor)
 
 ## Testing Guidelines
 - Use DocTest for all tests. [Reference](https://github.com/onqtam/doctest)
@@ -33,7 +35,6 @@
 
 ### Example Test Snippet
 ```cpp
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "manager.h"
 
@@ -96,6 +97,7 @@ double calculateDepartmentBudget(const std::string& departmentId) {
     return revenue - expenses;
   } catch (const std::exception& e) {
     std::cerr << "Failed to calculate department budget: " << e.what() << std::endl;
+    // rethrow the exception to propagate it up the call stack
     throw;
   }
 }
@@ -118,8 +120,51 @@ std::string fetchManagerDetails(const std::string& managerId) {
     return data;
   } catch (const std::exception& e) {
     std::cerr << "Failed to fetch manager details: " << e.what() << std::endl;
+    // rethrow the exception to propagate it up the call stack
     throw;
   }
+}
+```
+
+```cpp
+// Good example of a function to update an employee's department with proper naming and error handling
+/**
+ * Updates the department of an employee.
+ * @param employeeId The ID of the employee.
+ * @param newDepartment The new department to be assigned.
+ * @return True if the department was updated successfully, false otherwise.
+ */
+bool updateEmployeeDepartment(const std::string& employeeId, const std::string& newDepartment) {
+  try {
+    // Assuming updateDepartmentInDatabase is a function that updates the department in the database
+    auto success = updateDepartmentInDatabase(employeeId, newDepartment);
+    if (!success) {
+      throw std::runtime_error("Failed to update employee department in the database");
+    }
+    return true;
+  } catch (const std::exception& e) {
+    std::cerr << "Failed to update employee department: " << e.what() << std::endl;
+    return false;
+  }
+}
+```
+
+```cpp
+// Good example of a function to generate a report with proper string concatenation using std::stringstream
+/**
+ * Generates a report for an employee.
+ * @param employeeId The ID of the employee.
+ * @param employeeName The name of the employee.
+ * @param employeeSalary The salary of the employee.
+ * @return A string containing the report of the employee.
+ */
+std::string generateEmployeeReport(const std::string& employeeId, const std::string& employeeName, double employeeSalary) {
+  std::stringstream ss;
+  ss << "Employee Report\n";
+  ss << "ID: " << employeeId << "\n";
+  ss << "Name: " << employeeName << "\n";
+  ss << "Salary: " << employeeSalary << "\n";
+  return ss.str();
 }
 ```
 

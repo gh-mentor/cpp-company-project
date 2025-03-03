@@ -10,19 +10,28 @@
         "performance optimization",
         "TODO comments",
         "Doxygen comments are required",
-        "Ensure all abstract base classes have a virtual destructor"
-      ]
+        "Ensure all abstract base classes have a pure virtual destructor",
+        "SOLID design principles"
+      ],
+      "codeCoverage": "80%",
+      "documentation": "high",
+      "testCoverage": "90%"
     },
     "preferences": {
       "suggestions": {
         "style": "consistent",
-        "namingConvention": "camelCase"
+        "namingConvention": "camelCase",
+        "indentation": "spaces",
+        "lineLength": 80
       },
       "review": {
         "focusOn": [
           "functionality",
           "readability",
-          "maintainability"
+          "maintainability",
+          "security",
+          "bestPractices",
+          "SOLID design principles"
         ]
       }
     }
