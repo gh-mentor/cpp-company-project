@@ -31,3 +31,10 @@ void Developer::addProgrammingLanguage(const std::string& language) {
 const std::vector<std::string>& Developer::getProgrammingLanguages() const {
   return programmingLanguages;
 }
+
+/**
+ * Stub method for ping.
+ */
+void Developer::ping() const {
+  std::cout << "Developer " << getName() << " is active." << std::endl;
+}

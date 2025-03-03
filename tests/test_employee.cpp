@@ -3,10 +3,21 @@
 #include <stdexcept>
 
 /**
+ * Derived class from Employee for testing purposes.
+ */
+class TestEmployee : public Employee {
+public:
+  TestEmployee(int id, const std::string& name, double salary)
+    : Employee(id, name, salary) {}
+
+  void ping() const override {}
+};
+
+/**
  * Test case for Employee class.
  */
 TEST_CASE("Employee class") {
-  Employee employee(1, "Alice", 50000.0);
+  TestEmployee employee(1, "Alice", 50000.0);
 
   SUBCASE("getDetails") {
     CHECK(employee.getDetails() == "ID: 1, Name: Alice, Salary: 50000");

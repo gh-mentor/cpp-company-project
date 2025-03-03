@@ -2,6 +2,7 @@
 #include "manager.h"
 #include "employee.h"
 #include <sstream>
+#include <iostream>
 
 /**
  * Constructor for Manager class.
@@ -29,4 +30,11 @@ std::string Manager::getDetails() const {
  */
 std::string Manager::getDepartment() const {
   return department;
+}
+
+/**
+ * Stub method for ping.
+ */
+void Manager::ping() const {
+  std::cout << "Manager " << getName() << " is active." << std::endl;
 }

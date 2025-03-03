@@ -18,6 +18,8 @@ public:
   void writeCode(const std::string& code);
   void addProgrammingLanguage(const std::string& language);
   const std::vector<std::string>& getProgrammingLanguages() const;
+
+  void ping() const override; // Override pure virtual method
 };
 
 #endif // DEVELOPER_H

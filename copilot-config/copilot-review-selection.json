@@ -4,11 +4,12 @@
     "criteria": {
       "complexity": "medium",
       "language": "C++",
+      "version": "C++20",
+      "compilor": "g++",
       "focusAreas": [
         "class design",
         "error handling",
         "performance optimization",
-        "TODO comments",
         "Doxygen comments are required",
         "Ensure all abstract base classes have a virtual destructor",
         "SOLID design principles"
