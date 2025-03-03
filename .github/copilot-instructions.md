@@ -24,7 +24,7 @@
 - Ensure all promises are properly awaited using `std::future`. [Reference](https://en.cppreference.com/w/cpp/thread/future)
 - Verify that all dependencies are listed in `CMakeLists.txt`.
 - Check for any potential performance issues.
-- Ensure all abstract base classes have a pure virtual destructor. [Reference](https://en.cppreference.com/w/cpp/language/destructor)
+- Ensure all abstract base classes have a virtual destructor. [Reference](https://en.cppreference.com/w/cpp/language/destructor)
 
 ## Testing Guidelines
 - Use DocTest for all tests. [Reference](https://github.com/onqtam/doctest)

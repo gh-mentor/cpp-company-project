@@ -10,7 +10,7 @@
         "performance optimization",
         "TODO comments",
         "Doxygen comments are required",
-        "Ensure all abstract base classes have a pure virtual destructor",
+        "Ensure all abstract base classes have a virtual destructor",
         "SOLID design principles"
       ],
       "codeCoverage": "80%",
