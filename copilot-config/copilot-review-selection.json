@@ -1,40 +1,92 @@
 {
-  "reviewSelection": {
-    "enable": true,
-    "criteria": {
-      "complexity": "medium",
-      "language": "C++",
-      "version": "C++20",
-      "compilor": "g++",
-      "focusAreas": [
-        "class design",
-        "error handling",
-        "performance optimization",
-        "Doxygen comments are required",
-        "Ensure all abstract base classes have a virtual destructor",
-        "SOLID design principles"
-      ],
-      "codeCoverage": "80%",
-      "documentation": "high",
-      "testCoverage": "90%"
+  "instructions": [
+    {
+      "text": "Use camelCase for variable and function names.",
+      "language": "C++"
     },
-    "preferences": {
-      "suggestions": {
-        "style": "consistent",
-        "namingConvention": "camelCase",
-        "indentation": "spaces",
-        "lineLength": 80
-      },
-      "review": {
-        "focusOn": [
-          "functionality",
-          "readability",
-          "maintainability",
-          "security",
-          "bestPractices",
-          "SOLID design principles"
-        ]
-      }
+    {
+      "text": "Use PascalCase for class names.",
+      "language": "C++"
+    },
+    {
+      "text": "Use double quotes for strings.",
+      "language": "C++"
+    },
+    {
+      "text": "Ensure all functions have Doxygen comments.",
+      "language": "C++"
+    },
+    {
+      "text": "Ensure consistent indentation using 2 spaces.",
+      "language": "C++"
+    },
+    {
+      "text": "Use 'm_' as a prefix for private and protected member variables.",
+      "language": "C++"
+    },
+    {
+      "text": "Separate implementation and design by using header (.h or .hpp) and source (.cpp) files.",
+      "language": "C++"
+    },
+    {
+      "text": "Favor composition over inheritance where possible.",
+      "language": "C++"
+    },
+    {
+      "text": "Use const for variables that do not change.",
+      "language": "C++"
+    },
+    {
+      "text": "Use auto for type inference where appropriate.",
+      "language": "C++"
+    },
+    {
+      "text": "Prefer lambda functions for anonymous functions.",
+      "language": "C++"
+    },
+    {
+      "text": "Use std::stringstream for string concatenation.",
+      "language": "C++"
+    },
+    {
+      "text": "Ensure all functions handle errors using exceptions.",
+      "language": "C++"
+    },
+    {
+      "text": "Verify that all included headers are used.",
+      "language": "C++"
+    },
+    {
+      "text": "Check for proper error handling in all functions.",
+      "language": "C++"
+    },
+    {
+      "text": "Ensure all loops have proper termination conditions.",
+      "language": "C++"
+    },
+    {
+      "text": "Use descriptive names for variables and functions.",
+      "language": "C++"
+    },
+    {
+      "text": "Avoid deeply nested code; refactor into smaller functions if necessary.",
+      "language": "C++"
+    },
+    {
+      "text": "Ensure all promises are properly awaited using std::future.",
+      "language": "C++"
+    },
+    {
+      "text": "Verify that all dependencies are listed in CMakeLists.txt.",
+      "language": "C++"
+    },
+    {
+      "text": "Check for any potential performance issues.",
+      "language": "C++"
+    },
+    {
+      "text": "Ensure all abstract base classes have a virtual destructor.",
+      "language": "C++"
     }
-  }
+  ]
 }
