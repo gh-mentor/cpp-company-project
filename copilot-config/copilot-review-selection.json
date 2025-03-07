@@ -9,15 +9,11 @@
       "language": "C++"
     },
     {
-      "text": "Use double quotes for strings.",
-      "language": "C++"
-    },
-    {
       "text": "Ensure all functions have Doxygen comments.",
       "language": "C++"
     },
     {
-      "text": "Ensure consistent indentation using 2 spaces.",
+      "text": "Ensure consistent indentation.",
       "language": "C++"
     },
     {

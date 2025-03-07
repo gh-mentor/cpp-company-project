@@ -14,8 +14,8 @@
 - Use `const` for variables that do not change.
 - Use `auto` for type inference where appropriate.
 - Prefer lambda functions for anonymous functions.
-- Use `std::stringstream` for string concatenation. [Reference](https://cplusplus.com/reference/sstream/stringstream/)
-- Ensure all functions handle errors using exceptions. [Reference](https://en.cppreference.com/w/cpp/error/exception)
+- Use `std::stringstream` for string concatenation. 
+- Ensure all functions handle errors using exceptions. 
 - Verify that all included headers are used.
 - Check for proper error handling in all functions.
 - Ensure all loops have proper termination conditions.
@@ -24,7 +24,7 @@
 - Ensure all promises are properly awaited using `std::future`. [Reference](https://en.cppreference.com/w/cpp/thread/future)
 - Verify that all dependencies are listed in `CMakeLists.txt`.
 - Check for any potential performance issues.
-- Ensure all abstract base classes have a virtual destructor. [Reference](https://en.cppreference.com/w/cpp/language/destructor)
+- Ensure all abstract base classes have a virtual destructor. 
 
 ## Testing Guidelines
 - Use DocTest for all tests. [Reference](https://github.com/onqtam/doctest)
