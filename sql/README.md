@@ -14,6 +14,7 @@ The script will be generated in the file `company-db.sql` in the `sql` directory
 ## Steps to Generate T-SQL Script
 
 1. Create the Database
+Create (or open) `company-db.sql` in the `sql` directory
 Create a database named "company-db" if it doesn't already exist.
 
 2. Create Tables
