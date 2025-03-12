@@ -11,7 +11,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SOURCES
   src/employee.cpp
   src/manager.cpp
-  src/developer.cpp
   src/department.cpp
   src/company.cpp
 )
@@ -20,7 +19,6 @@ set(SOURCES
 set(HEADERS
   src/employee.h
   src/manager.h
-  src/developer.h
   src/department.h
   src/company.h
 )
@@ -37,8 +35,6 @@ set(TEST_SOURCES
   tests/test_company.cpp
   tests/test_department.cpp
   tests/test_employee.cpp
-  tests/test_manager.cpp
-  tests/test_developer.cpp
 )
 
 # Add the test executable
