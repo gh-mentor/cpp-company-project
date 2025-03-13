@@ -1,61 +1,32 @@
 #include "employee.h"
-#include <string>
-#include <sstream>
 #include <stdexcept>
+#include <sstream>
 
-/**
- * Constructs an Employee object.
- * @param id The ID of the employee.
- * @param name The name of the employee.
- * @param salary The salary of the employee.
- */
-Employee::Employee(int id, const std::string& name, double salary) 
-  : id(id), 
-    name(name), 
-    salary(salary) {}
+Employee::Employee(int id, const std::string& name, double salary)
+  : m_id(id), m_name(name), m_salary(salary) {}
 
-/**
- * Gets the details of the employee.
- * @return A string containing the details of the employee.
- */
 std::string Employee::getDetails() const {
   std::stringstream ss;
-  ss << "ID: " << id << ", Name: " << name << ", Salary: " << salary;
+  ss << "ID: " << m_id << ", Name: " << m_name << ", Salary: " << m_salary;
   return ss.str();
 }
 
-/**
- * Sets the salary of the employee.
- * @param newSalary The new salary to be set.
- */
-void Employee::setSalary(const double newSalary) {
-  if (newSalary < 0) {
+void Employee::setSalary(double salary) {
+  if (salary < 0) {
     throw std::invalid_argument("Salary cannot be negative");
   }
-  salary = newSalary;
+  m_salary = salary;
 }
 
-/**
- * Gets the salary of the employee.
- * @return The salary of the employee.
- */
 double Employee::getSalary() const {
-  return salary;
+  return m_salary;
 }
 
-/**
- * Gets the name of the employee.
- * @return The name of the employee.
- */
 std::string Employee::getName() const {
-  return name;
+  return m_name;
 }
 
-/**
- * Gets the ID of the employee.
- * @return The ID of the employee.
- */
 int Employee::getId() const {
-  return id;
+  return m_id;
 }
 

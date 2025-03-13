@@ -16,10 +16,16 @@ std::string Manager::getDetails() const {
 }
 
 /**
-* TODO: Implement a Manager::getDepartment method.
-*/
-
+ * Returns the department of the manager.
+ * @return The department of the manager.
+ */
+std::string Manager::getDepartment() const {
+  return department;
+}
 
 /**
- * TODO: Implement a Manager::ping method.
+ * Prints a ping message to indicate the manager is active.
  */
+void Manager::ping() const {
+  std::cout << "Manager " << getName() << " is active." << std::endl;
+}

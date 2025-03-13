@@ -4,29 +4,53 @@
 #include <string>
 
 /**
- * Represents an employee in the company.
+ * @class Employee
+ * @brief Represents an employee in the company.
  */
 class Employee {
-private:
-  int id;
-  std::string name;
-  double salary;
-
 public:
+  /**
+   * @brief Constructs an Employee object.
+   * @param id The ID of the employee.
+   * @param name The name of the employee.
+   * @param salary The salary of the employee.
+   */
   Employee(int id, const std::string& name, double salary);
 
-    // Default copy constructor
-    Employee(const Employee&) = default;
-  
+  /**
+   * @brief Gets the details of the employee.
+   * @return A string containing the details of the employee.
+   */
   std::string getDetails() const;
-  void setSalary(double salary);
-  double getSalary() const;
-  std::string getName() const;
-  int getId() const;
-  
-  virtual void ping() const = 0; // Pure virtual method
 
-  virtual ~Employee() = default; // Ensure virtual destructor for base class
+  /**
+   * @brief Sets the salary of the employee.
+   * @param salary The new salary of the employee.
+   */
+  void setSalary(double salary);
+
+  /**
+   * @brief Gets the salary of the employee.
+   * @return The salary of the employee.
+   */
+  double getSalary() const;
+
+  /**
+   * @brief Gets the name of the employee.
+   * @return The name of the employee.
+   */
+  std::string getName() const;
+
+  /**
+   * @brief Gets the ID of the employee.
+   * @return The ID of the employee.
+   */
+  int getId() const;
+
+private:
+  int m_id;
+  std::string m_name;
+  double m_salary;
 };
 
 #endif // EMPLOYEE_H
