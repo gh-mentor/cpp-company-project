@@ -2,6 +2,10 @@
 #define EMPLOYEE_H
 
 #include <string>
+#include <vector>
+#include <memory>
+
+class Project;
 
 /**
  * @class Employee
@@ -52,10 +56,29 @@ public:
    */
   virtual void ping() const;
 
+  /**
+   * @brief Adds a project to the employee.
+   * @param project The project to add.
+   */
+  void addProject(std::shared_ptr<Project> project);
+
+  /**
+   * @brief Removes a project from the employee.
+   * @param projectId The ID of the project to remove.
+   */
+  void removeProject(int projectId);
+
+  /**
+   * @brief Gets the list of projects the employee is working on.
+   * @return A vector of pointers to projects.
+   */
+  std::vector<std::shared_ptr<Project>> getProjectList() const;
+
 private:
   int m_id;
   std::string m_name;
   double m_salary;
+  std::vector<std::shared_ptr<Project>> m_projectList;
 };
 
 #endif // EMPLOYEE_H

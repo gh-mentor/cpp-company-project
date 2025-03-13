@@ -2,6 +2,7 @@
 #define DEPARTMENT_H
 
 #include "employee.h"
+#include "project.h"
 #include <vector>
 #include <string>
 #include <memory>
@@ -13,6 +14,7 @@ class Department {
 private:
   std::string m_departmentName;
   std::vector<std::unique_ptr<Employee>> m_employeeList;
+  std::vector<std::shared_ptr<Project>> m_projectList;
 
 public:
   Department(const std::string& name);
@@ -31,6 +33,24 @@ public:
   std::string getDepartmentName() const;
   void listEmployees() const;
   std::vector<Employee*> getEmployeeList() const;
+
+  /**
+   * @brief Adds a project to the department.
+   * @param project The project to add.
+   */
+  void addProject(std::shared_ptr<Project> project);
+
+  /**
+   * @brief Removes a project from the department.
+   * @param projectId The ID of the project to remove.
+   */
+  void removeProject(int projectId);
+
+  /**
+   * @brief Gets the list of projects in the department.
+   * @return A vector of pointers to projects.
+   */
+  std::vector<std::shared_ptr<Project>> getProjectList() const;
 };
 
 #endif // DEPARTMENT_H

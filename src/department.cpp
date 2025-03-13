@@ -1,4 +1,5 @@
 #include "department.h"
+#include "project.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -64,4 +65,29 @@ std::vector<Employee*> Department::getEmployeeList() const {
     employeePtrs.push_back(emp.get());
   }
   return employeePtrs;
+}
+
+/**
+ * Adds a project to the department.
+ * @param project The project to add.
+ */
+void Department::addProject(std::shared_ptr<Project> project) {
+  m_projectList.push_back(project);
+}
+
+/**
+ * Removes a project from the department.
+ * @param projectId The ID of the project to remove.
+ */
+void Department::removeProject(int projectId) {
+  m_projectList.erase(std::remove_if(m_projectList.begin(), m_projectList.end(),
+    [projectId](const std::shared_ptr<Project>& proj) { return proj->getId() == projectId; }), m_projectList.end());
+}
+
+/**
+ * Gets the list of projects in the department.
+ * @return A vector of pointers to projects.
+ */
+std::vector<std::shared_ptr<Project>> Department::getProjectList() const {
+  return m_projectList;
 }

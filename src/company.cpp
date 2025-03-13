@@ -1,6 +1,7 @@
 #include "company.h"
 #include "department.h"
 #include "employee.h"
+#include "project.h"
 #include <vector>
 #include <string>
 #include <iostream>
