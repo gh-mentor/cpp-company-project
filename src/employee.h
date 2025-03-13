@@ -47,6 +47,11 @@ public:
    */
   int getId() const;
 
+  /**
+   * @brief Prints a ping message to indicate the employee is active.
+   */
+  virtual void ping() const;
+
 private:
   int m_id;
   std::string m_name;

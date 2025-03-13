@@ -1,6 +1,7 @@
 #include "employee.h"
 #include <stdexcept>
 #include <sstream>
+#include <iostream>
 
 Employee::Employee(int id, const std::string& name, double salary)
   : m_id(id), m_name(name), m_salary(salary) {}
@@ -28,5 +29,9 @@ std::string Employee::getName() const {
 
 int Employee::getId() const {
   return m_id;
+}
+
+void Employee::ping() const {
+  std::cout << "Employee " << m_name << " is active." << std::endl;
 }
 

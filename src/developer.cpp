@@ -17,3 +17,7 @@ void Developer::writeCode(const std::string& code) {
   // For now, just print the code to simulate writing it
   std::cout << "Writing code: " << code << std::endl;
 }
+
+void Developer::ping() const {
+  std::cout << "Developer " << getName() << " is active." << std::endl;
+}

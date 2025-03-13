@@ -15,7 +15,7 @@ public:
   
   std::string getDepartment() const;
 
-  void ping() const override; // Override pure virtual method
+  void ping() const override; // Override virtual method from Employee
 };
 
 #endif // MANAGER_H

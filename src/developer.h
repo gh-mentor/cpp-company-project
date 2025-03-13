@@ -37,6 +37,11 @@ public:
    */
   void writeCode(const std::string& code);
 
+  /**
+   * @brief Prints a ping message to indicate the developer is active.
+   */
+  void ping() const override; // Override virtual method from Employee
+
 private:
   std::vector<std::string> m_programmingLanguages;
 };
